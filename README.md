@@ -1,53 +1,153 @@
-> Edited for use in IDX on 07/09/12
+🛡️ Stree Raksha — Women Safety Web App
 
-# Welcome to your Expo app 👋
+Stree Raksha is a lightweight, mobile-style web application designed to enhance women’s safety.
+It provides emergency SOS functionality, location simulation, and dummy heart rate tracking — all through an intuitive, responsive frontend interface.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This app is frontend-only, built using HTML, CSS, and JavaScript, and designed to be easily deployed on Firebase Hosting or any static web platform.
 
-## Get started
+🌟 Features
+🔊 Volume Button Simulation
 
-#### Android
+Simulates physical volume buttons on a mobile phone:
 
-Android previews are defined as a `workspace.onStart` hook and started as a vscode task when the workspace is opened/started.
+Press any button 3 times: Displays a popup saying “🚨 SOS message sent to contacts!”
 
-Note, if you can't find the task, either:
-- Rebuild the environment (using command palette: `IDX: Rebuild Environment`), or
-- Run `npm run android -- --tunnel` command manually run android and see the output in your terminal. The device should pick up this new command and switch to start displaying the output from it.
+Press any button 5 times: Plays a loud siren sound (dummy siren file).
 
-In the output of this command/task, you'll find options to open the app in a
+A simple press counter resets automatically after inactivity.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+🚨 Panic SOS Button
 
-You'll also find options to open the app's developer menu, reload the app, and more.
+A large red circular Panic Button placed in the center of the app interface.
 
-#### Web
+When pressed, it displays a modal popup saying:
 
-Web previews will be started and managred automatically. Use the toolbar to manually refresh.
+“SOS message and location sent to emergency contacts.”
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Shows a mock location (e.g., Latitude: 12.9716, Longitude: 77.5946).
 
-## Get a fresh project
+Can include a short vibration animation or blinking border for emphasis.
 
-When you're ready, run:
+❤️ Heart Rate Tracking (Dummy Feature)
 
-```bash
-npm run reset-project
-```
+Simulated health monitoring section for demonstration purposes.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Heart Rate Tracking: ON indicator
 
-## Learn more
+Add Device and Set Threshold buttons
 
-To learn more about developing your project with Expo, look at the following resources:
+When a threshold is exceeded, a popup appears:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+“⚠️ Heart rate threshold exceeded! Sending emergency alert...”
 
-## Join the community
+(Note: No real sensor or device integration — this is a mock UI flow.)
 
-Join our community of developers creating universal apps.
+🧠 Tech Stack
+Technology	Purpose
+HTML5	App structure & UI layout
+CSS3 (Flexbox/Grid)	Responsive, mobile-style design
+JavaScript (Vanilla)	Event handling & UI logic
+Firebase Hosting (optional)	Deployment platform
+Audio (MP3/WAV)	Siren sound playback
+🎨 UI & Design
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The app is built to look and feel like a smartphone application even on desktop browsers:
+
+Mobile viewport width (~360px–420px)
+
+Rounded corners and soft shadows
+
+Red and black theme for urgency
+
+Single-page layout (no navigation required)
+
+Layout Overview
+--------------------------------
+| 🔴  Stree Raksha (Header)     |
+|                              |
+| ⬆️ Volume Up       Volume Down ⬇️ |
+|                              |
+|   🆘  [ Panic Button ]         |
+|                              |
+|  ❤️ Heart Rate Tracking ON    |
+|   [ Add Device ] [ Threshold ]|
+|                              |
+|  “Safety is Power 💪” (Footer) |
+--------------------------------
+
+⚙️ Functionality (Frontend Simulation)
+Action	Output
+Press volume button 3×	Toast: “SOS message sent!”
+Press volume button 5×	Play siren sound
+Press Panic button	Popup with mock location
+Set heart rate threshold	Simulated emergency alert
+
+All actions are frontend-only simulations, handled using alert(), toast, or modal dialogs.
+
+🚀 Getting Started
+🧩 1. Clone the Repository
+git clone https://github.com/<your-username>/stree-raksha.git
+cd stree-raksha
+
+🧰 2. Open in a Code Editor
+
+Use VS Code, Sublime Text, or any preferred editor.
+
+🧪 3. Run Locally
+
+Open the file index.html directly in your browser.
+Or run a local server:
+
+npx live-server
+
+☁️ 4. Deploy to Firebase Hosting (Optional)
+firebase init
+firebase deploy
+
+📁 Project Structure
+stree-raksha/
+│
+├── index.html           # Main UI layout
+├── style.css            # App styling
+├── script.js            # Core UI interactions
+├── assets/
+│   ├── siren.mp3        # Dummy siren sound
+│   └── icons/           # Icons for buttons
+└── README.md            # This documentation
+
+🧱 Key JavaScript Functions
+Function	Description
+handleVolumePress()	Counts button presses & triggers actions
+sendSOSMessage()	Displays popup alert
+playSiren()	Plays siren sound
+simulateHeartRate()	Triggers mock threshold warning
+getMockLocation()	Returns sample coordinates
+📱 Responsiveness
+
+The app uses CSS Flexbox and media queries to ensure it adapts to all screen sizes.
+When viewed on a desktop, it appears centered in a phone-shaped container.
+
+🧩 Future Enhancements
+
+✅ Real-time GPS integration
+✅ SMS/Call API for real SOS delivery
+✅ Integration with wearables for real heart-rate data
+✅ Dark mode and accessibility support
+✅ Backend for contact management
+
+👩‍💻 Contributors
+
+Abhijit — Creator & Frontend Developer
+
+Contributions, forks, and pull requests are welcome!
+
+⚠️ Disclaimer
+
+This application is a frontend prototype intended for educational and demo purposes only.
+It does not send real emergency messages or track actual locations.
+For real safety apps, backend integration and verified APIs are required.
+
+🧡 Acknowledgment
+
+“Safety is not a privilege — it’s a right.”
+Stree Raksha is inspired by the collective goal of empowering women with technology-driven safety tools.
